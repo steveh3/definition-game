@@ -1,5 +1,7 @@
 # app db and settings file
 settings.json
+en.aoa.csv
+filtered.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
