@@ -28,9 +28,6 @@ copyright = "Copyright (C) 2025 by Flet"
 
 main = "main.py"
 
-# Include dictionary.json as an asset
-assets = ["src/assets/dictionary.json"]
-
 [tool.flet.app]
 path = "src"
 

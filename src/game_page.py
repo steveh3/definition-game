@@ -2,6 +2,7 @@ import flet as ft
 import json
 import random
 import os
+from dictionary import load_dictionary
 
 def main():  
     pass  
@@ -20,13 +21,7 @@ def create_game_page(page):
     # Read dictionary.json
 
     try:
-        base_path = os.getenv("FLET_APP_STORAGE_DATA") 
-        if not base_path:  
-            base_path = os.getcwd()   
-        dict_path = os.path.join(base_path, "src/assets/", "dictionary.json") 
-        print(dict_path) # DEBUG
-        with open(dict_path, "r", encoding="utf-8") as f:
-            dictionary = json.load(f)
+        dictionary = load_dictionary()
         # Filter words with valid definitions
         words = [
             word for word in dictionary.keys()
