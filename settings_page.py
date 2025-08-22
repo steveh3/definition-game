@@ -10,6 +10,8 @@ def create_settings_page(page):
         settings.set_setting(e.control.label,e.control.value)  
 
     return ft.Column([
+        ft.Text("Dictionary - The Definition Game", style="headlineMedium"),
+        ft.Divider(),
         ft.Text(f"Author: {settings.get_setting('Author')}"),
         ft.Text(f"Version: {settings.get_setting('Version')}"),
         ft.Divider(),

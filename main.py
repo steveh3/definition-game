@@ -8,11 +8,11 @@ def main(page: ft.Page):
     def route_change(e: ft.RouteChangeEvent):
         page.controls.clear()
         if e.route == "/":
-            page.add(create_main_page(page))
+            page.add(ft.Container(content=create_main_page(page)))
         elif e.route == "/game":
-            page.add(create_game_page(page))
+            page.add(ft.Container(content=create_game_page(page)))
         elif e.route == "/settings":
-            page.add(create_settings_page(page))
+            page.add(ft.Container(content=create_settings_page(page)))
         page.update()
 
     page.on_route_change = route_change
