@@ -29,7 +29,7 @@ copyright = "Copyright (C) 2025 by Flet"
 main = "main.py"
 
 # Include dictionary.json as an asset
-assets = ["dictionary.json"]
+assets = ["src/assets/dictionary.json"]
 
 [tool.flet.app]
 path = ""
@@ -44,3 +44,5 @@ package-mode = false
 
 [tool.poetry.group.dev.dependencies]
 flet = {extras = ["all"], version = "0.28.3"}
+
+my_package = ["src/assets/dictionary.json"]

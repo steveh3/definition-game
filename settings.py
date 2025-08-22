@@ -15,7 +15,7 @@ class AppSettings:
         if not app_data_path:  
             app_data_path = getcwd()  
 
-        self.settings_file = Path(path.join(app_data_path, settings_file))  
+        self.settings_file = Path(path.join(app_data_path,  "src/assets/", settings_file))  
         self._settings = self._load_settings()  
 
     def _get_default_file(self) -> dict:  

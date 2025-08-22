@@ -23,7 +23,8 @@ def create_game_page(page):
         base_path = os.getenv("FLET_APP_STORAGE_DATA") 
         if not base_path:  
             base_path = os.getcwd()   
-        dict_path = os.path.join(base_path, "dictionary.json") 
+        dict_path = os.path.join(base_path, "src/assets/", "dictionary.json") 
+        print(dict_path) # DEBUG
         with open(dict_path, "r", encoding="utf-8") as f:
             dictionary = json.load(f)
         # Filter words with valid definitions
