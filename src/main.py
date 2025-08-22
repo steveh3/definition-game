@@ -1,26 +1,22 @@
 import flet as ft
-
+from main_page import create_main_page
+from game_page import create_game_page
+from settings_page import create_settings_page
 
 def main(page: ft.Page):
-    counter = ft.Text("0", size=50, data=0)
+    # Page routes
+    def route_change(e: ft.RouteChangeEvent):
+        page.controls.clear()
+        if e.route == "/":
+            page.add(ft.Container(content=create_main_page(page)))
+        elif e.route == "/game":
+            page.add(ft.Container(content=create_game_page(page)))
+        elif e.route == "/settings":
+            page.add(ft.Container(content=create_settings_page(page)))
+        page.update()
 
-    def increment_click(e):
-        counter.data += 1
-        counter.value = str(counter.data)
-        counter.update()
+    page.on_route_change = route_change
+    page.go(page.route)
 
-    page.floating_action_button = ft.FloatingActionButton(
-        icon=ft.Icons.ADD, on_click=increment_click
-    )
-    page.add(
-        ft.SafeArea(
-            ft.Container(
-                counter,
-                alignment=ft.alignment.center,
-            ),
-            expand=True,
-        )
-    )
-
-
-ft.app(main)
+if __name__ == "__main__":
+    ft.app(target=main, assets_dir="src/assets")

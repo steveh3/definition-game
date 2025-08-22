@@ -32,7 +32,7 @@ main = "main.py"
 assets = ["src/assets/dictionary.json"]
 
 [tool.flet.app]
-path = ""
+path = "src"
 
 [tool.uv]
 dev-dependencies = [
